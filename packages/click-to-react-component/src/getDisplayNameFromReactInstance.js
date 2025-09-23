@@ -47,11 +47,13 @@ export function getDisplayNameForInstance(instance) {
       return 'SuspenseComponent'
 
     case 14:
-      return 'MemoComponent'
-
-    case 15: // SimpleMemoComponent
+    case 15:
       // Attempt to get name from wrapped component
-      return elementType.type.name ?? 'MemoComponent'
+      return (
+        elementType.type?.name ??
+        Symbol.keyFor?.(elementType.$$typeof) ??
+        'React.memo'
+      )
 
     case 16: // LazyComponent
       return 'React.lazy'
