@@ -1,3 +1,15 @@
 packages:
-  - "apps/*"
-  - "packages/*"
+  - apps/*
+  - packages/*
+
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - core-js
+  - core-js-pure
+  - cypress
+  - deasync
+  - esbuild
+  - msw
+  - prisma
+  - turbo
